@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>PWR Ultimate Power — Каталог на Wildberries</title>
+
+    <!-- Social / Instagram preview -->
+    <meta property="og:title" content="PWR Ultimate Power — Каталог на Wildberries">
+    <meta property="og:description" content="Спортивное питание PWR Ultimate Power. Откройте полный каталог в приложении Wildberries.">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Спортивное питание PWR Ultimate Power. Откройте полный каталог в приложении Wildberries.">
+
+    <!--
+        Smart App Banner (Safari only).
+        Если страница открыта в Safari (Insta "..." → "Open in browser"),
+        iOS показывает баннер "ОТКРЫТЬ" → запускает WB app.
+        app-argument передаёт целевую страницу бренда.
+    -->
+    <meta name="apple-itunes-app" content="app-id=597880187, app-argument=https://www.wildberries.ru/brands/pwr-ultimate-power">
+
+    <style>
+        :root {
+            --bg: #0a0807;
+            --bg-card: #1a1410;
+            --accent: #ff6b35;
+            --accent-hover: #ff4500;
+            --accent-glow: rgba(255, 107, 53, 0.28);
+            --text: #f7f4f0;
+            --text-muted: #a89d8f;
+            --wb-purple: #a03eff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.13) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            max-width: 380px;
+            width: 100%;
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .brand-tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 24px var(--accent-glow);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .cta:active { transform: scale(0.98); }
+
+        .hint {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hint--desktop {
+            display: none;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .wb-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 2rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 2rem;
+            background: var(--bg-card);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .wb-badge__dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--wb-purple);
+        }
+
+        .redirect-status {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .redirect-status .spinner {
+            display: inline-block;
+            width: 16px; height: 16px;
+            border: 2px solid var(--text-muted);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .cta-wrap { display: none; }
+        .cta-wrap--visible {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .safari-hint {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 0.85rem 1rem;
+            border-radius: 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 107, 53, 0.18);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .safari-hint strong { color: var(--text); }
+
+        .safari-hint--visible {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wb-badge">
+            <span class="wb-badge__dot"></span>
+            Wildberries
+        </div>
+
+        <h1 class="brand-name">PWR Ultimate Power</h1>
+        <p class="brand-tagline">Спортивное питание для силы и результата</p>
+
+        <p class="redirect-status" id="redirect-status" style="display:none;">
+            <span class="spinner"></span> Открываем Wildberries...
+        </p>
+
+        <div class="cta-wrap" id="cta-wrap">
+            <a  id="cta"
+                class="cta cta--pulse"
+                href="https://www.wildberries.ru/brands/pwr-ultimate-power"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                    <path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+                Открыть каталог
+            </a>
+            <p class="hint" id="hint">Нажмите, чтобы открыть в приложении</p>
+        </div>
+
+        <!-- iOS-specific: подсказка открыть в Safari для гарантированного Universal Link -->
+        <div class="safari-hint" id="safari-hint">
+            Не открылось приложение?<br>
+            Нажмите <strong>&#8943;</strong> внизу экрана &rarr; <strong>Открыть в Safari</strong><br>
+            Затем нажмите кнопку ещё раз
+        </div>
+
+        <div class="hint--desktop" id="desktop-hint">
+            Эта ссылка предназначена для мобильных устройств.<br>
+            Откройте на телефоне — каталог откроется прямо в приложении&nbsp;WB.
+        </div>
+    </div>
+
+    <iframe id="scheme-probe" style="display:none;" width="0" height="0"></iframe>
+
+    <script>
+        (function () {
+            var WB_URL   = 'https://www.wildberries.ru/brands/pwr-ultimate-power';
+            var WB_PKG   = 'com.wildberries.ru';
+            var ua       = navigator.userAgent || '';
+            var android  = /android/i.test(ua);
+            var ios      = /iPhone|iPad|iPod/i.test(ua);
+            var mobile   = android || ios;
+            var inIGorFB = /instagram|FBAN|FBAV/i.test(ua);
+            var cta      = document.getElementById('cta');
+            var ctaWrap  = document.getElementById('cta-wrap');
+            var status   = document.getElementById('redirect-status');
+            var safariH  = document.getElementById('safari-hint');
+
+            // Android: intent:// для надёжного открытия app
+            if (android) {
+                var intentUrl = 'intent://www.wildberries.ru/brands/pwr-ultimate-power#Intent;'
+                    + 'scheme=https;'
+                    + 'package=' + WB_PKG + ';'
+                    + 'S.browser_fallback_url=' + encodeURIComponent(WB_URL) + ';'
+                    + 'end';
+                cta.href = intentUrl;
+            }
+
+            if (mobile) {
+                status.style.display = 'block';
+
+                if (ios && inIGorFB) {
+                    /*
+                     * iOS + Instagram WebView: самый сложный случай.
+                     * Strategy:
+                     *  1. Try custom URL scheme via iframe (silent probe)
+                     *  2. Show button immediately (user tap = best chance for UL)
+                     *  3. Show Safari instruction as backup
+                     */
+
+                    var probe = document.getElementById('scheme-probe');
+                    try { probe.src = 'wb://brands/pwr-ultimate-power'; } catch(e) {}
+
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+
+                        setTimeout(function () {
+                            safariH.classList.add('safari-hint--visible');
+                        }, 3000);
+                    }, 300);
+
+                } else if (ios) {
+                    // iOS вне Instagram (Safari, Messages и т.д.)
+                    // Universal Links сработают — просто редиректим
+                    window.location.href = WB_URL;
+
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+                    }, 1500);
+
+                } else {
+                    // Android: автоматический редирект через intent
+                    window.location.href = intentUrl;
+
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+                    }, 1500);
+                }
+            } else {
+                // Desktop
+                ctaWrap.classList.add('cta-wrap--visible');
+                document.getElementById('desktop-hint').style.display = 'block';
+                document.getElementById('hint').textContent =
+                    'Или перейдите в браузере: wildberries.ru/brands/pwr-ultimate-power';
+            }
+        })();
+    </script>
+</body>
+</html>
