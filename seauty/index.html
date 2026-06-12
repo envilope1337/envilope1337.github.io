@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Seauty — Каталог бренда на Wildberries</title>
+    <meta name="robots" content="noindex">
+
+    <meta property="og:title" content="Seauty — Каталог бренда на Wildberries">
+    <meta property="og:description" content="Откройте каталог Seauty в приложении Wildberries.">
+    <meta name="description" content="Откройте каталог Seauty в приложении Wildberries.">
+
+    <!-- iOS Smart App Banner: app-argument = страница бренда -->
+    <meta name="apple-itunes-app" content="app-id=597880187, app-argument=https://www.wildberries.ru/brands/seauty">
+
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=109286123','ym');
+       ym(109286123,'init',{clickmap:false,trackLinks:false,accurateTrackBounce:false});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109286123" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <style>
+        :root{--bg:#0e0a12;--bg-card:#1a1320;--accent:#cb11ab;--accent2:#a03eff;--text:#f7f4f0;--muted:#a89db0;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{min-height:100dvh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+        body::before{content:'';position:fixed;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(160,62,255,.18) 0%,transparent 70%);pointer-events:none;z-index:0;}
+        .container{position:relative;z-index:1;text-align:center;padding:2rem 1.5rem;max-width:380px;width:100%;}
+        .brand-name{font-size:2rem;font-weight:800;letter-spacing:.06em;margin-bottom:.25rem;}
+        .brand-tagline{font-size:.9rem;color:var(--muted);margin-bottom:2rem;}
+        .badge{display:inline-flex;align-items:center;gap:.35rem;margin-bottom:1.5rem;padding:.35rem .75rem;border-radius:2rem;background:var(--bg-card);font-size:.7rem;color:var(--muted);}
+        .badge__dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+        .cta{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;width:100%;padding:1rem 1.5rem;border:none;border-radius:1rem;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-size:1.1rem;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s ease;box-shadow:0 4px 24px rgba(203,17,171,.28);-webkit-tap-highlight-color:transparent;}
+        .cta:active{transform:scale(.98);}
+        .hint{margin-top:1rem;font-size:.8rem;color:var(--muted);}
+        .redirect-status{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem;}
+        .spinner{display:inline-block;width:16px;height:16px;border:2px solid var(--muted);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:.4rem;}
+        @keyframes spin{to{transform:rotate(360deg);}}
+        .cta-wrap{display:none;}
+        .cta-wrap--visible{display:block;animation:fadeIn .3s ease;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+        .safari-hint{display:none;margin-top:1.5rem;padding:.85rem 1rem;border-radius:.75rem;background:var(--bg-card);border:1px solid rgba(160,62,255,.18);font-size:.78rem;color:var(--muted);line-height:1.5;}
+        .safari-hint strong{color:var(--text);}
+        .safari-hint--visible{display:block;animation:fadeIn .3s ease;}
+        .hint--desktop{display:none;margin-top:1.5rem;font-size:.85rem;color:var(--muted);line-height:1.5;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge"><span class="badge__dot"></span>Wildberries</div>
+        <h1 class="brand-name">Seauty</h1>
+        <p class="brand-tagline">Каталог бренда на Wildberries</p>
+
+        <p class="redirect-status" id="redirect-status" style="display:none;">
+            <span class="spinner"></span> Открываем Wildberries...
+        </p>
+
+        <div class="cta-wrap" id="cta-wrap">
+            <a id="cta" class="cta" href="https://www.wildberries.ru/brands/seauty" rel="noopener">
+                Открыть каталог в приложении WB
+            </a>
+            <p class="hint" id="hint">Нажмите, чтобы открыть в приложении</p>
+        </div>
+
+        <div class="safari-hint" id="safari-hint">
+            Не открылось приложение?<br>
+            Нажмите <strong>&#8943;</strong> внизу экрана &rarr; <strong>Открыть в Safari</strong><br>
+            Затем нажмите кнопку ещё раз
+        </div>
+
+        <div class="hint--desktop" id="desktop-hint">
+            Эта ссылка для мобильных устройств.<br>
+            Откройте на телефоне — каталог откроется в приложении&nbsp;Wildberries.
+        </div>
+    </div>
+
+    <iframe id="scheme-probe" style="display:none;" width="0" height="0"></iframe>
+
+    <script>
+        (function () {
+            var WB_URL = 'https://www.wildberries.ru/brands/seauty';
+            var WB_PKG = 'com.wildberries.ru';
+            var ua = navigator.userAgent || '';
+            var android = /android/i.test(ua);
+            var ios = /iPhone|iPad|iPod/i.test(ua);
+            var mobile = android || ios;
+            var inIGorFB = /instagram|FBAN|FBAV/i.test(ua);
+            var cta = document.getElementById('cta');
+            var ctaWrap = document.getElementById('cta-wrap');
+            var status = document.getElementById('redirect-status');
+            var safariH = document.getElementById('safari-hint');
+
+            var intentUrl = 'intent://www.wildberries.ru/brands/seauty#Intent;'
+                + 'scheme=https;package=' + WB_PKG + ';'
+                + 'S.browser_fallback_url=' + encodeURIComponent(WB_URL) + ';end';
+            if (android) { cta.href = intentUrl; }
+
+            if (mobile) {
+                status.style.display = 'block';
+                if (ios && inIGorFB) {
+                    var probe = document.getElementById('scheme-probe');
+                    try { probe.src = 'wb://brands/seauty'; } catch(e) {}
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+                        setTimeout(function () { safariH.classList.add('safari-hint--visible'); }, 3000);
+                    }, 300);
+                } else if (ios) {
+                    window.location.href = WB_URL;
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+                    }, 1500);
+                } else {
+                    window.location.href = intentUrl;
+                    setTimeout(function () {
+                        status.style.display = 'none';
+                        ctaWrap.classList.add('cta-wrap--visible');
+                    }, 1500);
+                }
+            } else {
+                ctaWrap.classList.add('cta-wrap--visible');
+                document.getElementById('desktop-hint').style.display = 'block';
+                document.getElementById('hint').textContent = 'Или откройте в браузере: wildberries.ru/brands/seauty';
+            }
+        })();
+    </script>
+</body>
+</html>
