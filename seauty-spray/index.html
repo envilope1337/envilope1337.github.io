@@ -111,17 +111,18 @@
                         setTimeout(function () { safariH.classList.add('safari-hint--visible'); }, 3000);
                     }, 300);
                 } else if (ios) {
-                    window.location.href = WB_URL;
+                    // задержка 1с: даём Я.Метрике отправить хит до ухода со страницы
+                    setTimeout(function () { window.location.href = WB_URL; }, 1000);
                     setTimeout(function () {
                         status.style.display = 'none';
                         ctaWrap.classList.add('cta-wrap--visible');
-                    }, 1500);
+                    }, 2500);
                 } else {
-                    window.location.href = intentUrl;
+                    setTimeout(function () { window.location.href = intentUrl; }, 1000);
                     setTimeout(function () {
                         status.style.display = 'none';
                         ctaWrap.classList.add('cta-wrap--visible');
-                    }, 1500);
+                    }, 2500);
                 }
             } else {
                 ctaWrap.classList.add('cta-wrap--visible');
